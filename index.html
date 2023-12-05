@@ -182,6 +182,74 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Solving complex visual tasks such as "Who invented the musical instrument on
+            the right?" involves a composition of skills: understanding space, recognizing
+            instruments, and also retrieving prior knowledge. Recent work shows promise by
+            decomposing such tasks using a large language model (LLM) into an executable
+            program that invokes specialized vision models. However, generated programs are
+            error-prone: they omit necessary steps, include spurious ones, and are unable
+            to recover when the specialized models give incorrect outputs. Moreover, they
+            require loading multiple models, incurring high latency and computation costs.
+          </p>
+
+          <p>
+            We propose <b>Visual Program Distillation (VPD)</b>, an instruction tuning framework
+            that produces a vision-language model (VLM) capable of solving complex visual
+            tasks with a single forward pass. VPD distills the reasoning ability of LLMs by
+            using them to sample multiple candidate programs, which are then executed and
+            verified to identify a correct one. It translates each correct program into a
+            language description of the reasoning steps, which are then distilled into a
+            VLM.
+          </p>
+
+          <p>
+            Extensive experiments show that VPD improves the VLM's ability to count,
+            understand spatial relations, and reason compositionally. Our VPD-trained
+            PaLI-X outperforms all prior VLMs, achieving state-of-the-art performance
+            across complex vision tasks, including MMBench, OK-VQA, A-OKVQA, TallyQA, POPE,
+            and Hateful Memes. An evaluation with human annotators also confirms that VPD
+            improves model response factuality and consistency. Finally, experiments on
+            content moderation demonstrate that VPD is also helpful for adaptation to
+            real-world applications with limited data.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Comparison between LLaVA and VPD instruction tuning</h2>
+      <img src="static/images/VPD website fig3.png">
+      <div class="content has-text-justified">
+        <p>
+          So, how does VPD differ from prior approaches for generating visual instruction tuning data?
+          Here we show examples of how LLaVA and VPD generate data.
+          LLaVA prompts LLM with image captions and let LLM generate task inputs and outputs.
+          However, <span style="color: red;"><b>image captions are coarse representation of images, and does not contain fine-grained attributes and relations.</b></span>
+          Bounding boxes may complement that, but LLMs are not good at reading bounding boxes, and only densely labeled datasets like COCO can be used.
+          Also, <span style="color: red;"><b>LLM generations suffers from hallucination and spurious reasoning steps.</b></span>
+          Even GPT-4V is still not reliable enough to generate faithful reasoning steps for complex tasks.
+          In contrast, VPD generates data by sampling programs from LLMs, and then use existing vision tools to get reasoning steps.
+          <span style="color: red;"><b>VPD works on any images, have fine-grained visual details, and contains more factual and consistent reasoning steps.</b></span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="section is-light" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
