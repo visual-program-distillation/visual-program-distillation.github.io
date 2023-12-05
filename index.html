@@ -89,26 +89,26 @@
           <h1 class="title is-1 publication-title"><span style="color: rgb(178, 51, 51);"><b>Visual Program Distillation:</b></span> <br> Distilling Tools and Programmatic Reasoning into Vision-Language Models</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://yushi-hu.github.io/">Yushi Hu</a><sup>1</sup>,</span>
+              <a href="https://yushi-hu.github.io/">Yushi Hu</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://otiliastr.github.io/">Otilia Stretcu</a><sup>2</sup>,</span>
+              <a href="https://otiliastr.github.io/">Otilia Stretcu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www2.cs.uic.edu/~clu/">Chun-Ta Lu</a><sup>2</sup>,</span>
+              <a href="https://www2.cs.uic.edu/~clu/">Chun-Ta Lu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://visual-program-distillation.github.io/">Krishnamurthy Viswanathan</a><sup>2</sup>,</span>
+              <a href="https://visual-program-distillation.github.io/">Krishnamurthy Viswanathan</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://visual-program-distillation.github.io/">Enming Luo</a><sup>2</sup>,</span>
+              <a href="https://visual-program-distillation.github.io/">Enming Luo</a><sup>1</sup>,</span>
               <br>
             <span class="author-block">
-                    <a href="http://www.ranjaykrishna.com/">Ranjay Krishna</a><sup>1</sup>,</span>
+                    <a href="http://www.ranjaykrishna.com/">Ranjay Krishna</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://visual-program-distillation.github.io/">Ariel Fuxman</a><sup>2</sup>,</span>
+              <a href="https://visual-program-distillation.github.io/">Ariel Fuxman</a><sup>1</sup></span>
 
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Google Research,  </span>
+            <span class="author-block"><sup>2</sup>University of Washington</span>
           </div>
 
           <div class="column has-text-centered">
@@ -161,180 +161,26 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-
+      
+      <img src="./static/images/VPD website fig2.jpg" alt="VPD method">
       <h2 class="subtitle has-text-centered">
-        Under Construction!!
-      </h2>
-      <img src="./static/images/tifa_webteaser.jpeg" alt="tifa teaser">
-            <h2 class="subtitle has-text-centered">
-              Step1: Generate a checklist of question-answer pairs with LLM (now GPT-3). <br>
-              Step2: Check whether existing VQA models can answer these questions using the generated image.
+              We introduce Visual Program Distillation (VPD), a
+              framework which leverages LLM-generated programs and vison tools to
+              synthesis multimodal chain-of-thought training data.
             </h2>
 
+      <img src="./static/images/VPD website fig1 small.jpg" alt="VPD radar">
+
+      <h2 class="subtitle has-text-centered">
+                    Our generalist models trained with
+                    VPD, PaLI-3-VPD (5B) and PaLI-X-VPD (55B), outperform prior VLMs on a broad range of tasks, while producing
+                    human-interpretable and faithful reasoning steps.
+                  </h2>
       
     </div>
   </div>
 </section>
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Why TIFA?</h2>
-        <div class="content has-text-justified">
-          <p>
-            Experiments show that <span style="color: red;"><b>TIFA is much more accurate than CLIP</b></span> in evaluating generated images, while being <span style="color: red;"><b>fine-grained and interpretable</b></span>. It is an ideal choice for fine-grained automatic evaluation of image generation.
-          </p>
-          <p>
-            TIFA works better because it leverages LLMs to decompose the text input into fine-grained probes (questions), which allows VQA to <span style="color: red;"><b>capture more nuanced aspects</b></span> of the text input and the generated image. Meanwhile, <span style="color: red;"><b>CLIP summarizes the image as a embedding</b></span>, making it inaccurate and unable to capture fine-grained details of an image.
-          </p>
-          <p>
-            <b>Do I need OpenAI API to run TIFA?</b> <span style="color: red;"><b>No, you don't. We have pre-generated the questions for you in TIFA v1.0 benchmark.</b></span> Meanwhile, we provide tools to generate your own questions with GPT-3.5.
-          </p>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Text-to-image generation models often fail to produce images that accurately align with the text inputs. We introduce <span style="color: red;"><b>TIFA (Text-to-image Faithfulness evaluation with question Answering)</b></span>, an automatic evaluation metric that measures the faithfulness of a generated image to its text input via <span style="color: red;"><b>visual question answering (VQA). </b></span>
-          </p>
-           <p>
-            Specifically, given a text input, we automatically generate several question-answer pairs using a <span style="color: red;"><b>language model</b></span>. We calculate image faithfulness by checking whether existing VQA models can answer these questions using the generated image. TIFA is a reference-free metric that allows for <span style="color: red;"><b>fine-grained and interpretable</b></span> evaluations of generated images.TIFA also has better correlations with human judgments than existing metrics (CLIP and SPICE). 
-          </p>
-          
-          <p>
-            Based on this approach, we introduce <span style="color: red;"><b>TIFA v1.0</b></span>, a benchmark consisting of 4K diverse text inputs and 25K questions across 12 categories (object, counting, etc.). We present a comprehensive evaluation of existing text-to-image models using TIFA v1.0 and highlight the limitations and challenges of current models. For instance, we find that current text-to-image models, despite doing well on color and material, still <span style="color: red;"><b>struggle in counting, spatial relations, and composing multiple objects</b></span>. We hope our benchmark will help carefully measure the research progress in text-to-image synthesis and provide valuable insights for further research.
-          </p>
-          
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">Updates</h2>
-      <div class="content has-text-justified">
-        <p>
-          Please email the authors if you want to submit to the leaderboard! <br>
-          <b>2023/08/22</b> We released the <a href="https://huggingface.co/tifa-benchmark/llama2_tifa_question_generation/">fine-tuned LLaMA 2 (7B) model</a> that allows users to parse texts and generate questions locally without relying on OpenAI API. <br>
-          <b>2023/04/19</b> We released the human annotations on text-to-image faithufulness for TIFA v1.0. Check it out in our repo!<br>
-          <b>2023/03/24</b> TIFA v1.0 is released! We also updated our evaluation code, VQA modules, and question generation modules. <br>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">How does it work?</h2>
-      <img src="static/images/tifa_webapproach.png">
-      <div class="content has-text-justified">
-        <p>
-          (a) <b>Overview of how TIFA evaluates the faithfulness of a synthesized image.</b> TIFA uses a language model (LM), a question answering (QA) model, and a visual question answering (VQA) model. Given a text input, we generate several question-answer pairs with the LM and then filter them via the QA model. To evaluate the faithfulness of a synthesized image to the text input, a VQA model answers these visual questions using the image, and we check the answers for correctness.
-        </p>
-        <p>
-          (b) <b>TIFA v1.0 benchmark.</b> While TIFA is applicable to any text prompt, to allow direct comparison across different studies, and for ease of use, we introduce the TIFA v1.0 benchmark, a repository of text inputs along with pre-generated question-answer pairs. To evaluate a text-to-image model, a user first produces the images for the text inputs in TIFA v1.0 and then performs VQA with our provided tools on generated images to compute TIFA.
-        </p>
-        <p>
-          (c) <b>Our question-answer pair generation pipeline.</b> The whole pipeline can be executed via a single inference of GPT-3 via in-context learning. Given the text prompt, GPT-3 first extracts the elements and then generates two questions for each element. The GPT-3 output is then parsed and filtered by UnifiedQA.
-        </p>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">TIFA v1.0 Benchmark</h2>
-      <img src="static/images/tifa_benchmark_new.png">
-      <div class="content has-text-justified">
-        <br>
-        <p>
-          TIFA v1.0 benchmark contains 4,081 text inputs sampled from MSCOCO, DrawBench, PartiPrompt, and PaintSkill. Each text input is paired with questions generated by GPT-3 and filtered by UnifiedQA, resulting in 25,829 questions altogether. The text inputs contain elements from 12 categories, as illustrated in the figure. We also show the most common elements from each category. In addition, we also show some example text inputs on the sides.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="hero is-small">
-  <div class="hero-body" id="leaderboard">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">Text-to-Image Model Leaderboard</h2>
-      <img src="static/images/tifa_leaderboard.png"  width=80%>
-      <div class="content has-text-justified">
-        <p><br>
-          We benchmark several text-to-image models, including AttnGAN, X-LXMERT, VQ-Diffusion, minDALL-E, and Stable Diffusion v1.1, v1.5, and v2.1. The score they get on TIFA v1.0 is shown above. The horizontal axis shows their release dates. We also mark the release date of OpenAI's DALL-E 1 model. We can see a clear trend of how text-to-image models evolve over time. There is a jump in TIFA score after DALL-E is released, from 60% to 75%.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">What are Stable Diffusion models struggling on?</h2>
-      <img src="static/images/question_type.png">
-      <div class="content has-text-justified">
-        <p><br>
-          Accuracy on each type of question in the TIFA v1.0 benchmark. The text-to-image models are Stable Diffusion v1.1, v1.5, and v2.1. We order the categories by the average score Stable Diffusion v2.1 gets on corresponding questions. For COCO captions, we also include the accuracy of the ground-truth images for reference. We can see that Stable Diffusion is <span style="color: red;"><b>struggling in shape, counting, and spatial relations.</b></span> "other" mainly contains <span style="color: red;"><b>abstract art notions</b></span>, and models are also struggling with them. Besides, we observe that generating images from real image captions in COCO is much easier than generating images from free-form text prompts.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">Composing multiple objects is difficult</h2>
-      <img src="static/images/compositionality.png" width=60%>
-      <div class="content has-text-justified">
-        <p><br>
-          TIFA vs. number of entities (objects, animals, humans, food) in the text input. The accuracy starts to drop when more than 5 entities are added to the text, showing that compositionality is hard for text-to-image models. Meanwhile, TIFA scores for MSCOCO ground-truth (GT) images remain consistent.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">TIFA is more correlated with human judgments than CLIP</h2>
-      <img src="static/images/tifa_compare.png" width=60%>
-      <div class="content has-text-justified">
-          <p><br>
-            We also collect human judgments on images generated by recent text-to-image models, using TIFA v1.0 text inputs. Each annotator gives a Likert Scale of 1-5 on "Does the image match the text?". This table shows the correlation between each automatic metric and human judgments. We can see that <span style="color: red;"><b>TIFA is more accurate than prior metrics (CLIP and captions)</b></span> for evaluating text-to-image faithfulness. We hypothesize that the major challenge of these prior metrics is that they summarize the image outputs and text inputs into a single representation (embedding/caption). <span style="color: red;"><b>In contrast, TIFA exploits the power of LLMs to decompose the text input into fine-grained probes, which allows VQA to capture more nuanced aspects of the text input and generated image.</b></span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section is-light" id="BibTeX">
   <div class="container is-max-desktop content">
