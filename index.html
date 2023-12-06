@@ -135,16 +135,6 @@
               <!-- Video Link. -->
               
               <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/Yushi-Hu/tifa"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                  </a>
-              </span>
-
 
             </div>
 
@@ -161,20 +151,23 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      
-      <img src="./static/images/VPD website fig2.jpg" alt="VPD method">
-      <h2 class="subtitle has-text-centered">
-              We introduce Visual Program Distillation (VPD), a
-              framework which leverages LLM-generated programs and vison tools to
+
+            <h2 class="subtitle has-text-centered">
+              We introduce Visual Program Distillation (VPD), a framework that leverages LLM-generated programs and vison tools to
               synthesis multimodal chain-of-thought training data.
             </h2>
+      
+      <img src="./static/images/website teaser.jpg" alt="VPD teaser">
+      <h2 class="subtitle has-text-centered">
+              VPD distills the reasoning ability of LLMs and the perception ability of vision tools into a single VLM.
+              VLMs instruction-tuned with VPD are able to solve complex visual tasks with a single forward pass, while producing human-interpretable and faithful reasoning steps. 
+            </h2>
 
-      <img src="./static/images/VPD website fig1 small.jpg" alt="VPD radar">
+      <img src="./static/images/VPD website fig1.jpg" alt="VPD radar">
 
       <h2 class="subtitle has-text-centered">
                     Our generalist models trained with
-                    VPD, PaLI-3-VPD (5B) and PaLI-X-VPD (55B), outperform prior VLMs on a broad range of tasks, while producing
-                    human-interpretable and faithful reasoning steps.
+                    VPD, PaLI-3-VPD (5B) and PaLI-X-VPD (55B), outperform prior VLMs on a broad range of tasks and set new SOTAs.
                   </h2>
       
     </div>
@@ -230,9 +223,10 @@
   <div class="hero-body">
     <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Approach</h2>
+      <img src="./static/images/VPD website fig2.jpg" alt="VPD approach">
       <div class="content has-text-justified">
         <p>
-          The top figure in the website shows the overall framework of VPD.
+          The figure above shows the overall framework of VPD.
           VPD contains two stages: <b>Program generation and verification</b> and <b>Distilling step-by-step</b>. 
           Program generation and verification contains following steps</b>:<br>
           1. Program generation with LLM <br>
@@ -270,23 +264,6 @@
   </div>
 </section>
 
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <h2 class="title is-3">Demos of VPD models</h2>
-      <img src="static/images/VPD website fig4.jpg">
-      <div class="content has-text-justified">
-        <p>
-          VPD models learn to reason like visual programs. Here we show some examples of VPD models conducting grounded reasoning on spatial relations, counting, and hateful meme detection.
-        </p>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop is-centered has-text-centered">
@@ -294,14 +271,56 @@
       <img src="static/images/VPD website fig5.png">
       <div class="content has-text-justified">
         <p>
-          In generalist setting, our PaLI-X-VPD sets the new state-of-the-art on all benchmarks. PaLI-3-VPD outperforms prior 13B+ VLMs on most benchmarks. Also, VPD variants outperform instruction-tuning baselines.
-          We also see similar results on Hateful memes, in which we sets the new SOTA for both supervised and unsupervised settings. Surprisingly, unsupervised PaLI-X-VPD even outperforms strong supervised baselines trained with 8,500 labels.
+          In generalist setting, our PaLI-X-VPD sets the new state-of-the-art on all benchmarks. PaLI-3-VPD outperforms
+          prior 13B+ VLMs on most benchmarks. Also, VPD variants outperform instruction-tuning baselines.
+          VPD is also helpful for adaptation to real-word tasks with limited data.
+          We experiment with VPD on Hateful Memes dataset. We sets the new SOTA for both supervised and
+          unsupervised settings. Surprisingly, unsupervised PaLI-X-VPD even outperforms strong supervised baselines
+          trained with 8,500 labels.
         </p>
 
       </div>
     </div>
   </div>
 </section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Human evaluation: VPD makes models more factual and consistent</h2>
+      <img src="static/images/VPD website fig6.png">
+      <div class="content has-text-justified">
+        <p>
+          Human evaluation shows that the long-form outputs of VPD models are more accurent, consistent, and faithful compared to the baselines instruction-tuned with LLM generations.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Demos on content moderation</h2>
+      <img src="static/images/VPD website fig7.jpg">
+      <div class="content has-text-justified">
+        <p>
+          Here we show some demos of applying VPD on content moderation task Hateful Memes. 
+          There are two settings. For the unsupervised settings, we do not use any human labels.
+          For the supervised settings, we use 8,500 human labels to fine-tune the model.
+          Our models are able to generate human-interpretable reasoning steps, and are able to detect hateful memes.
+          The unsupervised model works surprisingly well.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 <!-- <section class="hero is-small"> -->
