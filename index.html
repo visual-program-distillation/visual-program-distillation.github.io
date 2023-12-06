@@ -229,8 +229,29 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Approach</h2>
+      <div class="content has-text-justified">
+        <p>
+          The top figure in the website shows the overall framework of VPD.
+          VPD contains two stages: <b>Program generation and verification</b> and <b>Distilling step-by-step</b>. 
+          Program generation and verification contains following steps</b>:<br>
+          1. Program generation with LLM <br>
+          2. Program execution with vision modules <br>
+          3. Program filtering <br>
+          4. Converting program execution trace into chains-of-thoughts <br>
+          Given the synthesized CoT data, we fine-tune VLMs to output these chains-of-thoughts, using the same approach as in Distilling step-by-step. <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Comparison between LLaVA and VPD instruction tuning</h2>
-      <img src="static/images/VPD website fig3.png">
+      <img src="static/images/VPD website fig3.jpg">
       <div class="content has-text-justified">
         <p>
           So, how does VPD differ from prior approaches for generating visual instruction tuning data?
@@ -248,6 +269,59 @@
     </div>
   </div>
 </section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Demos of VPD models</h2>
+      <img src="static/images/VPD website fig4.jpg">
+      <div class="content has-text-justified">
+        <p>
+          VPD models learn to reason like visual programs. Here we show some examples of VPD models conducting grounded reasoning on spatial relations, counting, and hateful meme detection.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Quantitative results</h2>
+      <img src="static/images/VPD website fig5.png">
+      <div class="content has-text-justified">
+        <p>
+          In generalist setting, our PaLI-X-VPD sets the new state-of-the-art on all benchmarks. PaLI-3-VPD outperforms prior 13B+ VLMs on most benchmarks. Also, VPD variants outperform instruction-tuning baselines.
+          We also see similar results on Hateful memes, in which we sets the new SOTA for both supervised and unsupervised settings. Surprisingly, unsupervised PaLI-X-VPD even outperforms strong supervised baselines trained with 8,500 labels.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-small"> -->
+  <!-- <div class="hero-body">
+    <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Human evaluation results</h2>
+      <img src="static/images/VPD website fig5.png">
+      <div class="content has-text-justified">
+        <p>
+          In generalist setting, our PaLI-X-VPD sets the new state-of-the-art on all benchmarks. PaLI-3-VPD outperforms
+          prior 13B+ VLMs on most benchmarks. Also, VPD variants outperform instruction-tuning baselines.
+          We also see similar results on Hateful memes, in which we sets the new SOTA for both supervised and
+          unsupervised settings. Surprisingly, unsupervised PaLI-X-VPD even outperforms strong supervised baselines
+          trained with 8,500 labels.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section> -->
 
 
 <section class="section is-light" id="BibTeX">
